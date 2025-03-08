@@ -56,7 +56,7 @@ int main(void) {
     FILE *file = fopen("input.txt","r");
     if(!file) {
         perror("Failed to open input file.");
-        return EXIT_FAILURE;
+        exit(EXIT_FAILURE);
     }
 
     int left[1000];
@@ -84,4 +84,5 @@ int main(void) {
         similarity += (left[i] * findOccurrences(right,1000,left[i]));
     }
     printf("Similarity Score: %d\n",similarity);
+    exit(EXIT_SUCCESS);
 }
